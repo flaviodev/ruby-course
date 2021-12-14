@@ -1,12 +1,9 @@
 class Animal
+    
+  attr_accessor :noise
 
-    attr_reader :noise
+  def eat
+    puts "animal eating"
+  end
 
-    def initialize(options={})
-      @noise = options[:noise]
-    end
-
-    def noise
-        @noise
-    end
 end
