@@ -1,9 +1,8 @@
-require_relative 'dice/dice_set'
-require_relative 'dice/dice'
+require_relative 'dice_set'
+require_relative 'dice'
+require_relative '../titleable'
 
-puts "--------------------------------"
-puts "  Wellcome to the Dice Roller"
-puts "--------------------------------"
+puts_title("Wellcome to the Dice Roller")
 
 dice_set = DiceSet.new({number_of_dices: 3})
 

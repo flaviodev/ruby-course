@@ -1,6 +1,6 @@
-puts "-----------------------------------------"
-puts "|         Ruby Guessing Game            |"
-puts "-----------------------------------------"
+require_relative 'titleable'
+
+puts_title("Ruby Guessing Game")
 
 puts "\nWhat is your name?"
 name = gets

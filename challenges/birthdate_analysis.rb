@@ -1,8 +1,7 @@
 require 'date'
+require_relative 'titleable'
 
-puts "-----------------------------------------------------------------"
-puts "                       Birthdate Analysis"
-puts "-----------------------------------------------------------------"
+puts_title("Birthdate Analysis")
 
 puts "\nWhat year were you born?"
 year = gets.chomp
