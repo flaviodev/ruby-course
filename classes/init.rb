@@ -9,5 +9,5 @@ puts person.initial_and_last_name
 person.eighteen
 puts person.age
 
-pig = Animal.new({noise: "Oink!"})
+pig = Animal::Pig.new
 puts pig.noise
