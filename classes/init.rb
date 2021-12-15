@@ -1,5 +1,6 @@
 require_relative 'person/person'
 require_relative 'animal/animal'
+require_relative 'animal/pig'
 
 person = Person.new
 person.first_name = "José"
