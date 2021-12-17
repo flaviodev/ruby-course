@@ -1,3 +1,5 @@
+require_relative 'exceptions/invalid_band_freq_range_error'
+
 class Band
 
     def initialize(options = {}) 
@@ -26,13 +28,15 @@ class Band
 private
 
     def validate(options = {}) 
-        raise "name must be entered" unless options[:name]
-        raise "name must be entered" if options[:name].empty?
-        raise "name must be a text" unless options[:name].is_a?(String)
+        raise ArgumentError("name must be entered") unless options[:name]
+        raise ArgumentError("name must be entered") if options[:name].empty?
+        raise ArgumentError("name must be a text") unless options[:name].is_a?(String)
 
-        raise "frequence range must be entered" unless options[:freq_range]
-        raise "frequence range must be a range" unless options[:freq_range].is_a?(Range)
-        raise "frequence begin must be greater than or equals 0" unless options[:freq_range].begin >=0
-        raise "frequence max must be less than or equals 2000" unless options[:freq_range].max <=2000
+        raise ArgumentError("frequence range must be entered") unless options[:freq_range]
+        raise ArgumentError("frequence range must be a range") unless options[:freq_range].is_a?(Range)
+
+        if options[:freq_range].begin <0 || options[:freq_range].max >2000 
+            raise InvalidBandFreqRangeError.new(options[:freq_range], 0, 200)
+        end
     end
 end

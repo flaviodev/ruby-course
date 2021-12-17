@@ -1,4 +1,5 @@
 require_relative 'band'
+require_relative 'exceptions/invalid_band_freq_error'
 
 class Radio
     @@bands = { fm: Band.fm, am: Band.am }
@@ -35,7 +36,7 @@ class Radio
     end
 
     def freq=(value) 
-        return if value < @band.freq_range.begin || value > @band.freq_range.max
+        raise InvalidBandFreqError.new(value, @band) if value < @band.freq_range.begin || value > @band.freq_range.max
         @frequency = value
     end
 
