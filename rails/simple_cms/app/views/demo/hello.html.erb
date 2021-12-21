@@ -1,0 +1,13 @@
+<h1>Hello page!</h1>
+
+<%= 1 +1 %>
+
+<% target = "world"%>
+
+<%= "hello #{target}!"%>
+
+<% @array.each do |n|%>
+<p><%= n %></p>
+<% end %>
+
+<div><%= link_to "Home", {controller: "demo" , action: "index", page: 5, id: 123}%></div>
