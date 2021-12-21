@@ -11,4 +11,11 @@ class DemoController < ApplicationController
     @array = [1,2,3,4,5]
     #redirect_to(controller: 'demo', action: 'index')
   end
+
+  def about
+  end
+
+  def contact
+    @country = params[:country]
+  end
 end

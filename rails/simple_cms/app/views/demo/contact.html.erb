@@ -1,0 +1,18 @@
+<h1>Contact us</h1>
+
+<%
+    phone = case params[:country]
+    when 'us'
+    "(800) 555-6789"
+    when 'ca'
+    "(800) 555-6789"
+    when 'uk'
+    "(020) 7946 1234"
+    else
+    "+1 (987) 654-3210"
+    end
+%>
+
+<p>Phone: <%= phone%></p>
+
+<div><%= link_to "About us", {controller: "demo" , action: "about"}%></div>
