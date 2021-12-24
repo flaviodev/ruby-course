@@ -1,7 +1,19 @@
 Rails.application.routes.draw do
 
-  resources :subjects
-  resources :pages
+  root 'home#index'
+
+  get 'home/index'
+  resources :subjects do
+    member do
+      get :delete
+    end
+  end
+
+  resources :pages do
+    member do
+      get :delete
+    end
+  end
 
   # get 'subjects/index'
   # get 'subjects/show'
