@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<%= link_to 'New Post', new_post_path %>
+<br>
+
+<% @posts.each do |post| %>
+  <div>
+    <hr>
+    <h3>Title: <%= post.title %></h3>
+    <p>Posted <%= time_tag post.created_at, "data-local": "time-ago" %></p>
+    <p><strong><%= pluralize post.comments.count, "comment" %></strong></p>
+    <p><strong>Content:</strong></p><p><%= post.content %></p>
+    <%= render "comments", post: post %>
+    <p><%= link_to 'Show this post', post %></p>
+  </div>
+<% end %>
+
+

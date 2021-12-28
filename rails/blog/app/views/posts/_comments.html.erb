@@ -1,0 +1,7 @@
+<h2>Comments</h2>
+
+<% post.comments.each do |comment| %>
+    <%= render "comments/show", comment: comment %>
+<% end %>
+<br>
+<%= render "comments/new", post: post %>
